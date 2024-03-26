@@ -35,7 +35,7 @@ catch(Exception $e){
     <title>Document</title>
 </head>
 <body>
-<?php include_once("header.php")?>
+<?php include_once("header.php") ?>
 
 <?php foreach($messages as $message): ?>
     <div><?php echo $message?></div>
