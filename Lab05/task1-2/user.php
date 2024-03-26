@@ -24,9 +24,9 @@ try {
 
     $user = $stmt->fetch();
 
-    if(empty($id))
+    if(empty($user))
     {
-        header("Location: index.php");
+        echo 404;
         die();
     }
 }
@@ -86,7 +86,9 @@ catch(Exception $e){
         </tr>
     </table>
 
-    <a class="btn btn-primary mt-4" href="updateUser.php">Update profile</a>
+    <?php if(isset($_SESSION['LOGGED_IN']) && $_SESSION['USER_ID'] == $id): ?>
+        <a class="btn btn-primary mt-4" href="updateUser.php">Update profile</a>
+    <?php endif ?>
 </div>
 
 </body>

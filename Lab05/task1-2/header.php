@@ -2,6 +2,13 @@
     <div class="container">
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" <?php echo ariaCurrent("Products") ?> href="products.php">Products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" <?php echo ariaCurrent("Employees") ?> href="employees.php">Employees</a>
+                </li>
                 <?php
                 function ariaCurrent($name){
                     global $current_page;
@@ -15,14 +22,14 @@
                         <a class="nav-link active" <?php echo ariaCurrent("My profile") ?> href="myprofile.php">My profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"  href="logout.php">Log Out</a>
+                        <a class="nav-link active"  href="logout.php">Log Out</a>
                     </li>
                 <?php else: ?>
                     <li class="nav-item">
-                        <a href="login.php" <?php echo ariaCurrent("Log in") ?>class="nav-link">Log in</a>
+                        <a href="login.php " <?php echo ariaCurrent("Log in") ?>class="nav-link active">Log in</a>
                     </li>
                     <li class="nav-item">
-                        <a href="register.php" <?php echo ariaCurrent("Register") ?>class="nav-link">Register</a>
+                        <a href="register.php" <?php echo ariaCurrent("Register") ?>class="nav-link active">Register</a>
                     </li>
                 <?php endif ?>
             </ul>

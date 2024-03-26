@@ -64,7 +64,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
             </td>
             <td>
-                <input id="emailField" name="email" type="email">
+                <input class="form-control" id="emailField" name="email" type="email">
             </td>
         </tr>
         <tr>
@@ -73,7 +73,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
             </td>
             <td>
-                <input id="passwordField" name="password" type="password">
+                <input class="form-control" id="passwordField" name="password" type="password">
 
             </td>
         </tr>

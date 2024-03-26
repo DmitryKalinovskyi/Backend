@@ -68,7 +68,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
     <title>Document</title>
 </head>
 <body>
-<?php include_once("header.php")?>
+<?php include_once("header.php") ?>
 
 <?php foreach($messages as $message): ?>
     <div><?php echo $message?></div>
@@ -83,7 +83,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
                     <label for="nameField">Name:</label>
                 </td>
                 <td>
-                    <input id="nameField" name="name" value="<?php echo $user['Name']?>">
+                    <input class="form-control" id="nameField" name="name" value="<?php echo $user['Name']?>">
                 </td>
             </tr>
             <tr>
@@ -91,7 +91,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
                     <label for="surnameField">Surname:</label>
                 </td>
                 <td>
-                    <input id="surnameField" name="surname" value="<?php echo $user['Surname']?>">
+                    <input class="form-control" id="surnameField" name="surname" value="<?php echo $user['Surname']?>">
                 </td>
             </tr>
             <tr>
@@ -100,7 +100,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
                 </td>
                 <td>
-                    <input id="ageField" name="age" value="<?php echo $user['Age']?>">
+                    <input class="form-control" id="ageField" name="age" value="<?php echo $user['Age']?>">
                 </td>
             </tr>
         </table>
@@ -109,7 +109,7 @@ if($_SERVER['REQUEST_METHOD'] == 'GET'){
 
     </form>
 
-    <form action="deleteAccount.php" method="post">
+    <form action="crud/deleteAccount.php" method="post">
         <button class="btn btn-dark mt-5">Delete account</button>
     </form>
 

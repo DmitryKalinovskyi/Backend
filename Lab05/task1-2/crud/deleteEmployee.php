@@ -3,23 +3,23 @@
 session_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
-    if(empty($_SESSION['LOGGED_IN']) || empty($_SESSION['USER_ID'])){
-        header('Location: index.php');
+    $id = $_POST['id'];
+
+    if(empty($id)){
+        header("Location: ../employees.php");
         die();
     }
-
-    $userId = $_SESSION['USER_ID'];
 
     try {
         $pdo = new PDO('mysql:host=localhost;dbname=lab05;charset=utf8','root','');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $pdo->prepare("DELETE FROM USERS WHERE Id = :id");
+        $stmt = $pdo->prepare("DELETE FROM employees WHERE Id = :id");
 
-        $stmt->execute(['id' => $userId]);
+        $stmt->execute(['id' => $id]);
 
         session_destroy();
-        header("Location: index.php");
+        header("Location: ../employees.php");
     }
     catch(PDOException $e) {
         $msg = $e->getMessage();

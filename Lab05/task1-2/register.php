@@ -63,7 +63,7 @@ VALUES (:name, :surname, :age, :email, :password)");
 
                 </td>
                 <td>
-                    <input id="nameField" name="name">
+                    <input class="form-control" id="nameField" name="name">
 
                 </td>
             </tr>
@@ -72,7 +72,7 @@ VALUES (:name, :surname, :age, :email, :password)");
                     <label for="surnameField">Surname:</label>
                 </td>
                 <td>
-                    <input id="surnameField" name="surname">
+                    <input class="form-control" id="surnameField" name="surname">
                 </td>
             </tr>
             <tr>
@@ -81,7 +81,7 @@ VALUES (:name, :surname, :age, :email, :password)");
 
                 </td>
                 <td>
-                    <input id="ageField" name="age">
+                    <input class="form-control" id="ageField" name="age">
 
                 </td>
             </tr>
@@ -91,7 +91,7 @@ VALUES (:name, :surname, :age, :email, :password)");
 
                 </td>
                 <td>
-                    <input id="emailField" name="email" type="email">
+                    <input class="form-control" id="emailField" name="email" type="email">
 
                 </td>
             </tr>
@@ -101,7 +101,7 @@ VALUES (:name, :surname, :age, :email, :password)");
 
                 </td>
                 <td>
-                    <input id="passwordField" name="password" type="password">
+                    <input class="form-control" id="passwordField" name="password" type="password">
 
                 </td>
             </tr>
