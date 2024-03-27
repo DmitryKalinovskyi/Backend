@@ -51,9 +51,12 @@ VALUES (:name, :surname, :age, :email, :password)");
 <body>
     <?php include_once("header.php") ?>
 
-    <?php foreach($messages as $message): ?>
-        <div><?php echo $message?></div>
-    <?php endforeach;?>
+    <div class="container">
+
+        <?php foreach($messages as $message): ?>
+            <div><?php echo $message?></div>
+        <?php endforeach;?>
+    </div>
 
     <form action="register.php" method="post" class="container">
         <table>
@@ -82,7 +85,6 @@ VALUES (:name, :surname, :age, :email, :password)");
                 </td>
                 <td>
                     <input class="form-control" id="ageField" name="age">
-
                 </td>
             </tr>
             <tr>

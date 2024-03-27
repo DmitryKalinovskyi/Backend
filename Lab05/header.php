@@ -9,6 +9,10 @@
                 <li class="nav-item">
                     <a class="nav-link active" <?php echo ariaCurrent("Employees") ?> href="employees.php">Employees</a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link active" <?php echo ariaCurrent("Stats") ?> href="stats.php">Stats</a>
+                </li>
                 <?php
                 function ariaCurrent($name){
                     global $current_page;
