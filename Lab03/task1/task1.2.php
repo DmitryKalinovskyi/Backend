@@ -10,6 +10,19 @@
     <title>Document</title>
 </head>
 <body>
+<?php
+function getFontSize(): int{
+    return match ($_COOKIE[FONT_SIZE_COOKIE] ?? '') {
+        "mn" => MINIMUM_FONT_SIZE,
+        "mx" => MAXIMUM_FONT_SIZE,
+        default => DEFAULT_FONT_SIZE,
+    };
+}
+?>
+<div style="font-size: <?php echo getFontSize()?>px">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. A adipisci aperiam beatae consequatur cumque expedita illum ipsam non nulla recusandae. Consectetur dolore doloremque error explicabo magni maiores nulla optio vero!
+</div>
 
+<a href="task1.php">Prev page</a>
 </body>
 </html>

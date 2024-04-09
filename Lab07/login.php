@@ -25,10 +25,15 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
         if($user !== false && $user['Password'] === $password){
             $_SESSION['LOGGED_IN'] = true;
             $_SESSION['USER_ID'] = $user["Id"];
+
+            // перенаправляємо користувача на його сторінку
             header("Location: myprofile.php");
+
+            // встановлюємо значення хедерів без кешування
             header("Cache-Control: no-cache, no-store, must-revalidate");
             header("Pragma: no-cache");
             header("Expires: 0");
+
             die();
         }
         else{
@@ -59,11 +64,13 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 
 <?php
 
-ob_start();
+ob_start(); // Розпочнемо буферизацію
 foreach($messages as $message)
     echo "<div>$message</div>";
-$_SESSION['captured_messages'] = ob_get_clean()
 
+$_SESSION['captured_messages'] = ob_get_contents(); // отримаємо інформацію в буфері
+
+ob_end_clean(); // очистимо буфер, та зупинемо буферизацію
 
 ?>
 

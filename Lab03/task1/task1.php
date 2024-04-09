@@ -38,8 +38,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             return ($_COOKIE[FONT_SIZE_COOKIE] ?? '') === $val;
         }
 
-
-
     ?>
     <form method="post" style="margin-top: 200px">
         <div>
