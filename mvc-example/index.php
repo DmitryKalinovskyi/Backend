@@ -5,10 +5,16 @@ require "vendor/autoload.php";
 use Framework\application\AppBuilder;
 use Framework\mapper\RouteMapper;
 use MVCExample\db\MVCDatabaseContext;
+use MVCExample\services\AuthenticateService;
+use MVCExample\services\IAuthenticateService;
+use MVCExample\services\IRegisterService;
+use MVCExample\services\RegisterService;
 
 try{
     // Create app and configure all services.
     $appBuilder = new AppBuilder();
+
+    session_start();
 
     // add database
     $appBuilder->services()
@@ -16,6 +22,11 @@ try{
             new MVCDatabaseContext("mysql:host=127.0.0.1;dbname=mvcexample"));
 
     $appBuilder->useMVC();
+
+    // add authentication
+    $appBuilder->services()
+        ->addScoped(IAuthenticateService::class, AuthenticateService::class)
+        ->addScoped(IRegisterService::class, RegisterService::class);
 
     // custom route binding.
     $appBuilder->services()

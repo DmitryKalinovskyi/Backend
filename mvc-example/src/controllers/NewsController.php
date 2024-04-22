@@ -37,12 +37,15 @@ class NewsController extends ControllerBase
 
     #[Route("new-topic")]
     public function NewTopic(){
-
+        $this->render("topiccreate.php");
     }
 
     #[Route("new-topic")]
     #[HttpPost]
     public function NewTopicPost(){
+        // get info about topic and store it in database
+
+
 
     }
 }

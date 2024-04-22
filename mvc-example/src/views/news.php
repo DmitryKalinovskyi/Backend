@@ -29,14 +29,30 @@
         <button class="btn">
         </button>
     </div> -->
-    <div class="auth">
-        <button class="btn ">
-            Sign in
-        </button>
-        <button class="btn ">
-            Sign up
-        </button>
+    <?php if($_SESSION['logged_in']): ?>
+
+    <div class="d-flex">
+        <form method="post" action="authenticate/logout">
+            <button class="btn">
+                Logout
+            </button>
+        </form>
+        <a class="btn" href="profile">
+            Profile
+        </a>
     </div>
+
+
+    <?php else: ?>
+        <div class="auth">
+            <a class="btn " href="authenticate/login">
+                Sign in
+            </a>
+            <a class="btn " href="authenticate/register">
+                Sign up
+            </a>
+        </div>
+    <?php endif;?>
 </nav>
 
 <div class="container mb-5">
