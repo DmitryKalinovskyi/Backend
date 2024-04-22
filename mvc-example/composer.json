@@ -1,0 +1,8 @@
+{
+  "autoload": {
+    "psr-4": {
+      "MVCExample\\": "src/",
+      "Framework\\": "../../DeepCode/backend/framework"
+    }
+  }
+}
