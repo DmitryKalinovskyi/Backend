@@ -7,6 +7,7 @@ use Framework\attributes\Routing\Route;
 use Framework\http\HttpContext;
 use Framework\mvc\ControllerBase;
 use MVCExample\db\MVCDatabaseContext;
+use MVCExample\models\NewsTopic;
 
 class NewsController extends ControllerBase
 {
@@ -42,10 +43,19 @@ class NewsController extends ControllerBase
 
     #[Route("new-topic")]
     #[HttpPost]
-    public function NewTopicPost(){
+    public function NewTopicPost(): void{
         // get info about topic and store it in database
 
+        $newsTopic = new NewsTopic();
 
+        $newsTopic->title = $_POST['title'];
+        $newsTopic->description = $_POST['description'];
+        $newsTopic->newsReference = $_POST['newsReference'];
+        $newsTopic->imageUrl = $_POST['imageUrl'];
 
+//        $newsTopic->ownerId = $_POST['title'];
+
+        $this->_db->news->insert($newsTopic);
+        $this->redirect("/mvc-example/news");
     }
 }

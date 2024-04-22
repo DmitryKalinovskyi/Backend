@@ -40,6 +40,9 @@
         <a class="btn" href="profile">
             Profile
         </a>
+        <a class="btn" href="news/new-topic">
+            New Topic
+        </a>
     </div>
 
 
